@@ -2,6 +2,7 @@ import Image from 'next/image';
 import classes from './page.module.css'
 import { getMeal } from '@/lib/meals_mongo';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 export async function generateMetadata({params}) {
   const meal = await getMeal(params.mealSlug);
@@ -30,6 +31,7 @@ console.log(meal)
 
   return (
     <>
+    <Suspense className={classes.loading} fallback={<p>Loading</p>}>
       <header className={classes.header}>
         <div className={classes.image}>
           <Image src={meal.image} alt={meal.title} fill />
@@ -50,6 +52,7 @@ console.log(meal)
         >
         </p>
       </main>
+    </Suspense>
     </>
   );
 }
