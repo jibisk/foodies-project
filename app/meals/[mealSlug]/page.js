@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import classes from './page.module.css'
-import { getMeal } from '@/lib/meals';
+import { getMeal } from '@/lib/meals_mongo';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({params}) {
-  const meal = getMeal(params.mealSlug);
+  const meal = await getMeal(params.mealSlug);
 
   if(!meal){
     notFound();
@@ -16,15 +16,16 @@ export async function generateMetadata({params}) {
   };
 }
 
-export default function MealsDetailsPage({params}) {
+export default async function MealsDetailsPage({params}) {
 
-  const meal = getMeal(params.mealSlug);
-
+  const meal = await getMeal(params.mealSlug);
+console.log(meal)
   if(!meal){
     notFound();
   }
 
-  meal.instructions = meal.instructions.replace(/\n/g, '<br/>')
+  // meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
+  meal.instructions = (meal.instructions || '').replace(/\n/g, '<br/>');
   
 
   return (
@@ -36,7 +37,7 @@ export default function MealsDetailsPage({params}) {
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
           <p className={classes.creator}>
-            by <a href={`mailto:${meal.creator_email}`}> {meal.name}</a>
+            by <a href={`mailto:${meal.creator_email}`}> {meal.creator}</a>
           </p>
           <p className={classes.summary}>{meal.summary}</p>
         </div>
