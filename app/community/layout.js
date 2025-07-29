@@ -6,7 +6,9 @@ export const metadata = {
 export default function MealsLayout({ children }) {
   return (
     <>
+    <div className="row">
         {children}
+    </div>
     </>
   );
 }

@@ -1,8 +1,8 @@
 .header {
   gap: 3rem;
   margin: 3rem auto 5rem auto;
-  width: 90%;
-  max-width: 75rem;
+  /* width: 90%;
+  max-width: 75rem; */
   color: #ddd6cb;
   font-size: 1.5rem;
 }
@@ -25,7 +25,7 @@
 .cta a {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border-radius: 0.5rem;
   background: linear-gradient(90deg, #f9572a, #ff9b05);
   color: #ffffff;

@@ -1,8 +1,8 @@
 .header {
   gap: 3rem;
   margin: 3rem auto 5rem auto;
-  width: 90%;
-  max-width: 75rem;
+  /* width: 90%;
+  max-width: 75rem; */
   color: #ddd6cb;
   font-size: 1.5rem;
   text-align: center;
@@ -20,8 +20,8 @@
 }
 
 .main {
-  width: 90%;
-  max-width: 40rem;
+  /* width: 90%;
+  max-width: 40rem; */
   margin: 0 auto;
   text-align: center;
 }
@@ -47,14 +47,14 @@
 }
 
 .perks img {
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
   object-fit: contain;
 }
 
 .perks p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   margin: 0;
   color: #ddd6cb;

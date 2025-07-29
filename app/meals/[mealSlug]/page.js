@@ -20,7 +20,7 @@ export async function generateMetadata({params}) {
 export default async function MealsDetailsPage({params}) {
 
   const meal = await getMeal(params.mealSlug);
-console.log(meal)
+
   if(!meal){
     notFound();
   }
@@ -32,25 +32,27 @@ console.log(meal)
   return (
     <>
     <Suspense className={classes.loading} fallback={<p>Loading</p>}>
-      <header className={classes.header}>
-        <div className={classes.image}>
+      <header className={`${classes.header} row`}>
+        <div className={`${classes.image} col-12 col-sm-12 col-md-6`}>
           <Image src={meal.image} alt={meal.title} fill />
         </div>
-        <div className={classes.headerText}>
-          <h1>{meal.title}</h1>
+        <div className={`${classes.headerText} col-12 col-sm-12 col-md-6 d-flex justify-content-center flex-column`}>
+          <h1 className="text-break">{meal.title}</h1>
           <p className={classes.creator}>
             by <a href={`mailto:${meal.creator_email}`}> {meal.creator}</a>
           </p>
-          <p className={classes.summary}>{meal.summary}</p>
+          <p className={`${classes.summary} text-break`}>{meal.summary}</p>
         </div>
       </header>
-      <main>
-        <p className={classes.instructions}
+      <main className="row">
+        <div className="col-12">
+        <p className={`${classes.instructions} text-break`}
           dangerouslySetInnerHTML={{
             __html: meal.instructions
           }}
         >
         </p>
+        </div>
       </main>
     </Suspense>
     </>

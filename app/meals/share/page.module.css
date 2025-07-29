@@ -1,8 +1,8 @@
 .header {
   gap: 3rem;
   margin: 3rem auto 5rem auto;
-  width: 90%;
-  max-width: 75rem;
+  /* width: 90%;
+  max-width: 75rem; */
   color: #ddd6cb;
   font-size: 1.5rem;
 }
@@ -19,14 +19,15 @@
 }
 
 .main {
-  width: 90%;
-  max-width: 75rem;
+  /* width: 90%;
+  max-width: 75rem; */
   margin: 3rem auto;
   color: white;
 }
 
 .form {
   max-width: 50rem;
+  margin: auto;
 }
 
 .form label {

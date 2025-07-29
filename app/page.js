@@ -5,12 +5,13 @@ import ImageSlideshow from "@/components/images/image-slideshow";
 export default function Home() {
   return (
     <>
-      <header className={classes.header}>
-        <div className={classes.slideshow}>
+
+      <header className={`${classes.header} row`}>
+        <div className={`${classes.slideshow} col-12 col-sm-12 col-md-6`}>
           <ImageSlideshow />
         </div>
-        <div>
-          <div className={classes.hero}>
+        <div className="col-12 col-sm-12 col-md-6 d-flex justify-content-center flex-column">
+          <div className={`${classes.hero} my-3`}>
             <h1> Food Lovers</h1>
             <p>Taste and share food from all over the world</p>
           </div>
@@ -20,8 +21,8 @@ export default function Home() {
           </div>
         </div>
       </header>
-<main>
-        <section className={classes.section}>
+      <main className="row">
+        <section className={`${classes.section} col-12 mb-5`}>
           <h2>How it works</h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
@@ -34,7 +35,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className={classes.section}>
+        <section className={`${classes.section} col-12`}>
           <h2>Why NextLevel Food?</h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
