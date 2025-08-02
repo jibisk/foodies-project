@@ -21,7 +21,7 @@ export default function MealItem({ title, slug, image, summary, creator }) {
       <div className={`${classes.content} text-break`}>
         <p className={`${classes.summary} text-break`}>{summary}</p>
         <div className={classes.actions}>
-          <Link href={`/meals/${slug}`}>View Details</Link>
+          <Link href={`/meals/${slug}`} prefetch>View Details</Link>
         </div>
       </div>
     </article>

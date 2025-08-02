@@ -4,6 +4,9 @@ import { getMeal } from '@/lib/meals_mongo';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
+// Enable ISR: Regenerate page every 5 seconds
+export const revalidate = 5;
+
 export async function generateMetadata({params}) {
   const meal = await getMeal(params.mealSlug);
 
